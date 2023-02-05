@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:28:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/04 12:04:58 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/05 17:36:06 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	comand(char **com, char *g);
 void	full_p(char **com, char **env);
 void	sub(char **com, char **env);
 void	awk(char *argv, char **env);
-void	file(char *f, int i);
+void	file(char *f);
 int		open_f(char *argv, int i);
 void	doc(char *l, int argc);
-void	musuko_bonus(char *argv, char **env);
+void	musuko_bonus(char *argv, char **env, int fin, int i);
 void	arggs(void);
 
 #endif

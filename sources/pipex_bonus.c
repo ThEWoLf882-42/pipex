@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:05:00 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/04 12:04:42 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/05 17:11:45 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv, char **env)
 			dup2(fin, STDIN_FILENO);
 		}
 		while (++i < argc - 2)
-			musuko_bonus(argv[i], env);
+			musuko_bonus(argv[i], env, fin, i);
 		dup2(fout, STDOUT_FILENO);
 		exe(argv[argc - 2], env);
 	}

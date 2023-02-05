@@ -6,13 +6,13 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:19:47 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/03 12:28:03 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/05 17:11:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	musuko_bonus(char *argv, char **env)
+void	musuko_bonus(char *argv, char **env, int fin, int i)
 {
 	int		fd[2];
 	pid_t	pid;
@@ -26,7 +26,8 @@ void	musuko_bonus(char *argv, char **env)
 	{
 		close(fd[0]);
 		dup2(fd[1], STDOUT_FILENO);
-		waitpid(pid, NULL, 0);
+		if (fin == -1 && i == 2)
+			exit (0);
 		exe(argv, env);
 	}
 	else
