@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:19:47 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/02 15:33:48 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:28:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	musuko_bonus(char *argv, char **env)
 	pid_t	pid;
 
 	if (pipe(fd) == -1)
-		the_error();
+		the_error(NULL, NULL);
 	pid = fork();
 	if (pid == -1)
-		the_error();
+		the_error(NULL, NULL);
 	if (pid == 0)
 	{
 		close(fd[0]);

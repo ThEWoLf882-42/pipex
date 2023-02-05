@@ -57,7 +57,7 @@ RESET = \033[0m
 
 all: $(NAME)
 
-bonus: $(NAME_B)
+#bonus: $(NAME_B)
 
 $(NAME): $(LIBFT) $(OBJECTS_DIRECTORY) $(OBJECTS) $(OBJECTS_M)
 	@$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(LIBFT) $(OBJECTS) $(OBJECTS_M) -o $(NAME)

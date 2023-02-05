@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:08:43 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/02 14:41:25 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/04 12:04:32 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	open_f(char *argv, int i)
 		fd = open(argv, O_RDONLY);
 	if (fd == -1 && i == 2)
 		file(argv, 1);
-	if (fd == -1)
-		the_error1();
+	if (fd == -1 && i != 2)
+		the_error1(NULL, NULL);
 	return (fd);
 }

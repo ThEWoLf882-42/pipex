@@ -6,22 +6,44 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:22:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/01/27 20:16:22 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:33:15 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	the_error(void)
+void	the_error(char *path, char **com)
 {
+	int	i;
+
+	i = -1;
 	perror("pipex");
+	if (path)
+		free(path);
+	if (com)
+	{
+		while (com[++i])
+			free(com[i]);
+		free(com);
+	}
 	if (errno == 13)
 		exit (126);
 	exit(127);
 }
 
-void	the_error1(void)
+void	the_error1(char *path, char **com)
 {
+	int	i;
+
+	i = -1;
 	perror("pipex");
+	if (path)
+		free(path);
+	if (com)
+	{
+		while (com[++i])
+			free(com[i]);
+		free(com);
+	}
 	exit(1);
 }

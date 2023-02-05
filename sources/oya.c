@@ -18,7 +18,7 @@ void	oya(char **argv, char **env, int *fd)
 
 	fout = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fout == -1)
-		the_error1();
+		the_error1(NULL, NULL);
 	dup2(fd[0], STDIN_FILENO);
 	dup2(fout, STDOUT_FILENO);
 	close(fd[1]);

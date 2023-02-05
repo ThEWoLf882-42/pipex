@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:20:32 by agimi             #+#    #+#             */
-/*   Updated: 2023/01/27 20:18:20 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:21:13 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	exe(char *argv, char **env)
 	path = path_find(com, env);
 	if (!path)
 	{
-		comand(com[0], "command not found");
+		comand(com, "command not found");
 		while (com[++i])
 			free(com[i]);
 		free(com);
 	}
 	if (execve(path, com, env) == -1)
-		the_error();
+		the_error(path, com);
 }

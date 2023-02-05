@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:32:27 by agimi             #+#    #+#             */
-/*   Updated: 2023/01/27 20:19:13 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:25:15 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	awk(char *argv, char **env)
 	path = path_find(com, env);
 	if (!path)
 	{
-		comand(com[0], "command not found");
+		comand(com, "command not found");
 		while (com[++i])
 			free(com[i]);
 		free(com);
 	}
 	if (execve(path, com, env) == -1)
-		the_error();
+		the_error(path, com);
 	exit(0);
 }

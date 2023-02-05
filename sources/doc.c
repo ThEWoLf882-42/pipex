@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:13:53 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/02 15:48:42 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:26:16 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	doc(char *l, int argc)
 	if (argc < 6)
 		arggs();
 	if (pipe(fd) == -1)
-		the_error();
+		the_error(NULL, NULL);
 	pidr = fork();
 	if (pidr == 0)
 	{

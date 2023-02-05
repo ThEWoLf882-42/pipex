@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:23:23 by agimi             #+#    #+#             */
-/*   Updated: 2023/01/27 20:18:49 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:47:31 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,16 @@ char	*path_find(char **com, char **env)
 		while (env[++i] && ft_strnstr(env[i], "PATH", 4) == 0)
 			;
 		if (!env[i])
-			comand(com[0], "command not found");
+			comand(com, "command not found");
 		paths = ft_split(env[i] + 5, ':');
 	}
 	path = loop(paths, com[0]);
-	if (access(path, F_OK) == 0)
-		return (path);
 	i = -1;
 	while (paths[++i])
 		free(paths[i]);
 	free(paths);
+	if (path)
+		if (access(path, F_OK) == 0)
+			return (path);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:28:23 by agimi             #+#    #+#             */
-/*   Updated: 2023/01/28 15:21:24 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/03 12:30:36 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	main(int argc, char **argv, char **env)
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
-			the_error();
+			the_error(NULL, NULL);
 		pid = fork();
 		if (pid == -1)
-			the_error();
+			the_error(NULL, NULL);
 		if (pid == 0)
 			musuko(argv, env, fd);
 		oya(argv, env, fd);
