@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:23:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/05 19:17:02 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/06 15:30:23 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	get_next_line(char **line)
 	}
 	buffer[i] = '\n';
 	buffer[++i] = '\0';
+	*line = 0;
 	*line = buffer;
 	free(buffer);
 	return (r);
