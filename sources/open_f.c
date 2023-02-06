@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:08:43 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/05 17:12:30 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/05 18:36:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ int	open_f(char *argv, int i)
 	if (fd == -1 && i == 2)
 	{
 		t = ft_strjoin("pipex: ", argv);
-		t = ft_strjoin(t, ": No such file or directory\n");
+		t = ft_strjoin_n(t, ": No such file or directory\n");
 		ft_putstr_fd(t, 2);
+		free(t);
 	}
 	if (fd == -1 && i != 2)
 		the_error1(NULL, NULL);

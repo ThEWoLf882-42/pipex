@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:06:07 by agimi             #+#    #+#             */
-/*   Updated: 2023/02/02 15:13:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/02/05 19:17:33 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		get_next_line(char **line);
+char	*ft_strjoin_n(char *naah, char *buff);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
